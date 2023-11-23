@@ -10,6 +10,7 @@ public class Calculator {
     public int div(int a, int b) {
         if (b == 0)
             throw new ArithmeticException("Деление на 0 запрещено!");
+            throw new ArithmeticException("Нельзя с нулём");
         return a / b;
     }
 
@@ -33,3 +34,16 @@ public class Calculator {
     }
 }
 
+        if (operator == '+') {
+            return add(a, b);
+        } else if (operator == '-') {
+            return dif(a, b);
+        } else if (operator == '*') {
+            return times(a, b);
+        } else if (operator == '/') {
+            return div(a, b);
+        } else {
+            throw new IllegalArgumentException("Несуществующий оператор: " + operator);
+        }
+    }
+}
